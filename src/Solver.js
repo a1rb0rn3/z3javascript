@@ -2,8 +2,8 @@
  * Copyright Blake Loring <blake_l@parsed.uk> 2015
  */
 
-import Z3 from "./Z3Loader";
-import Model from "./Model";
+const Z3 = require('./Z3Loader');
+const Model = require('./Model');
 
 class Solver {
 
@@ -78,4 +78,4 @@ class Solver {
 	}
 }
 
-export default Solver;
+module.exports = Solver;

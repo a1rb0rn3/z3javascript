@@ -17,9 +17,11 @@ function astArray(args) {
 	});
 }
 
-export default {
+const Z3Utils = {
 	wrap: function(ctx, ret) {
 		return ret;
 	},
 	astArray: astArray
 };
+
+module.exports = Z3Utils

@@ -59,4 +59,4 @@ Query.process = function(solver, alternatives) {
 	return model;
 };
 
-export default Query;
+module.exports = Query;

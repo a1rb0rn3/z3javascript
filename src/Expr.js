@@ -2,7 +2,7 @@
  * Copyright Blake Loring <blake_l@parsed.uk> 2015
  */
 
-import Z3 from "./Z3Loader";
+const Z3 = require('./Z3Loader');
 
 class Expr {
 
@@ -156,4 +156,4 @@ class Expr {
 	}
 }
 
-export default Expr;
+module.exports = Expr;

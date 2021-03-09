@@ -2,8 +2,8 @@
  * Copyright Blake Loring <blake_l@parsed.uk> 2015
  */
 
-import Z3 from "./Z3Loader";
-import Expr from "./Expr";
+const Z3 = require('./Z3Loader');
+const Expr = require('./Expr');
 
 class Model {
 	constructor(context, model) {
@@ -27,4 +27,4 @@ class Model {
 	}
 }
 
-export default Model;
+module.exports = Model;

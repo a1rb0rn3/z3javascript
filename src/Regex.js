@@ -814,4 +814,4 @@ function RegexOuter(ctx, regex) {
 	}
 }
 
-export default RegexOuter;
+module.exports = RegexOuter;

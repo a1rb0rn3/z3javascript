@@ -10,13 +10,13 @@
  * ref counts.
  */
 
-import Expr from "./Expr";
-import Model from "./Model";
-import Context from "./Context.js";
-import Solver from "./Solver";
-import Regex from "./Regex";
-import Query from "./Query";
-import Check from "./Check";
+const Expr = require('./Expr');
+const Model = require('./Model');
+const Context = require('./Context');
+const Solver = require('./Solver');
+const Regex = require('./Regex');
+const Query = require('./Query');
+const Check = require('./Check');
 
 let API = {};
 
@@ -28,4 +28,4 @@ API.Regex = Regex;
 API.Query = Query;
 API.Check = Check;
 
-export default API;
+module.exports = API

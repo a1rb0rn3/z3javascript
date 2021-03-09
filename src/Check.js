@@ -2,7 +2,7 @@
  * Copyright Blake Loring <blake_l@parsed.uk>
  */
 
-export default function(check_predicate, altgen) {
+ module.exports = function(check_predicate, altgen) {
 	return function(query, model) {
 
 		//Returns the Query check structure with either a list of alternative queries or nothing
