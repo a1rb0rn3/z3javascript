@@ -19,3 +19,6 @@ cp ./bin/z3_bindings_ref.js ./bin/package.js
 
 echo "Done Z3JS"
 #./scripts/setup
+
+echo "Sources Cp"
+cp ./src/*.js ./bin/
