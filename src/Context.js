@@ -281,6 +281,10 @@ class Context {
 		return this._build(Z3.Z3_mk_not, arg);
 	}
 
+	mkBvNot(arg) {
+		return this._build(Z3.Z3_mk_bvnot, arg);
+	}
+
 	mkIte(ifarg, thenarg, elsearg) {
 		return this._build(Z3.Z3_mk_ite, ifarg, thenarg, elsearg);
 	}
@@ -297,8 +301,16 @@ class Context {
 		return this._build(Z3.Z3_mk_xor, left, right);
 	}
 
+	mkBvXOr(arg1, arg2) {
+		return this._build(Z3.Z3_mk_bvxor, arg1, arg2);
+	}
+
 	mkAnd(left, right) {
 		return this._buildVar(Z3.Z3_mk_and, left, right);
+	}
+
+	mkBvAnd(arg1, arg2) {
+		return this._build(Z3.Z3_mk_bvand, arg1, arg2);
 	}
 
 	mkAndList(conditions) {
@@ -307,6 +319,10 @@ class Context {
 
 	mkOr(left, right) {
 		return this._buildVar(Z3.Z3_mk_or, left, right);
+	}
+
+	mkBvOr(arg1, arg2) {
+		return this._build(Z3.Z3_mk_bvor, arg1, arg2);
 	}
 
 	/**
@@ -325,12 +341,24 @@ class Context {
 		return this._buildVar(Z3.Z3_mk_add, left, right);
 	}
 
+	mkBvAdd(arg1, arg2) {
+		return this._build(Z3.Z3_mk_bvadd, arg1, arg2);
+	}
+
 	mkMul(left, right) {
 		return this._buildVar(Z3.Z3_mk_mul, left, right);
 	}
 
+	mkBvMul(arg1, arg2) {
+		return this._buildVar(Z3.Z3_mk_bvmul, arg1, arg2);
+	}
+
 	mkSub(left, right) {
 		return this._buildVar(Z3.Z3_mk_sub, left, right);
+	}
+
+	mkBvSub(arg1, arg2) {
+		return this._buildVar(Z3.Z3_mk_bvsub, arg1, arg2);
 	}
 
 	mkUnaryMinus(arg) {
@@ -339,6 +367,14 @@ class Context {
 
 	mkDiv(arg1, arg2) {
 		return this._build(Z3.Z3_mk_div, arg1, arg2);
+	}
+
+	mkBvUDiv(arg1, arg2) {
+		return this._buildVar(Z3.Z3_mk_bvudiv, arg1, arg2);
+	}
+
+	mkBvSDiv(arg1, arg2) {
+		return this._buildVar(Z3.Z3_mk_bvsdiv, arg1, arg2);
 	}
 
 	mkBitwiseShiftLeft(arg1, arg2) {
