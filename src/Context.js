@@ -82,6 +82,10 @@ class Context {
 		return Z3.Z3_get_sort(this.ctx, e.ast);
 	}
 
+	mkSortKind(sort) {
+		return Z3.Z3_get_sort_kind(this.ctx, sort);
+	}
+
 	mkSortName(sort) {
 		return Z3.Z3_get_sort_name(this.ctx, sort);
 	}
