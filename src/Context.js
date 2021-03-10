@@ -98,6 +98,10 @@ class Context {
 		return this.mkVar(name, this.mkIntSort());
 	}
 
+	mkBvVar(name, size) {
+		return this.mkVar(name, this.mkBvSort(size))
+	}
+
 	mkRealVar(name) {
 		return this.mkVar(name, this.mkRealSort());
 	}
@@ -227,6 +231,10 @@ class Context {
 		return Z3.Z3_mk_int_sort(this.ctx);
 	}
 
+	mkBvSort(size) {
+		return Z3.Z3_mk_bv_sort(this.ctx, size);
+	}
+
 	mkSeqSort(sort) {
 		return Z3.Z3_mk_seq_sort(this.ctx, sort);
 	}
@@ -350,7 +358,7 @@ class Context {
 	}
 
 	mkBvMul(arg1, arg2) {
-		return this._buildVar(Z3.Z3_mk_bvmul, arg1, arg2);
+		return this._build(Z3.Z3_mk_bvmul, arg1, arg2);
 	}
 
 	mkSub(left, right) {
@@ -358,7 +366,7 @@ class Context {
 	}
 
 	mkBvSub(arg1, arg2) {
-		return this._buildVar(Z3.Z3_mk_bvsub, arg1, arg2);
+		return this._build(Z3.Z3_mk_bvsub, arg1, arg2);
 	}
 
 	mkUnaryMinus(arg) {
@@ -370,11 +378,11 @@ class Context {
 	}
 
 	mkBvUDiv(arg1, arg2) {
-		return this._buildVar(Z3.Z3_mk_bvudiv, arg1, arg2);
+		return this._build(Z3.Z3_mk_bvudiv, arg1, arg2);
 	}
 
 	mkBvSDiv(arg1, arg2) {
-		return this._buildVar(Z3.Z3_mk_bvsdiv, arg1, arg2);
+		return this._build(Z3.Z3_mk_bvsdiv, arg1, arg2);
 	}
 
 	mkBitwiseShiftLeft(arg1, arg2) {
