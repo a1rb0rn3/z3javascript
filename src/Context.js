@@ -393,11 +393,11 @@ class Context {
 		return this._build(Z3.Z3_mk_bvsdiv, arg1, arg2);
 	}
 
-	mkBitwiseShiftLeft(arg1, arg2) {
+	mkBvShl(arg1, arg2) {
 		return this._build(Z3.Z3_mk_bvshl, arg1, arg2);
 	}
 
-	mkBitwiseShiftRight(arg1, arg2) {
+	mkBvShr(arg1, arg2) {
 		return this._build(Z3.Z3_mk_bvlshr, arg1, arg2);
 	}
 
