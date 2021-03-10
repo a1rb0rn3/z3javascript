@@ -64,6 +64,12 @@ class Expr {
 		return Number(num_dec_string);
 	}
 
+	getBvValue() {
+		this.context.mkBvToInt(this);
+		let num_dec_string = Z3.Z3_get_numeral_decimal_string(this.context.ctx, this.ast, 30);
+		return Number(num_dec_string);
+	}
+
 	escapeString(str) {
 		function replacer(match, p1) {
 			var chars = str[p1 + 2] + str[p1 + 3];
@@ -120,6 +126,8 @@ class Expr {
 
 		if (sort === "Real" || sort === "Int") {
 			return this.getRealValue();
+		} else if (sort === "bv") {
+			return this.getBvValue();
 		} else if (sort === "Bool") {
 			return this.getBoolValue();
 		} else if (sort === "String") {
