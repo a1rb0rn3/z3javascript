@@ -72,6 +72,20 @@ class Context {
 		return arrayInstance.setLength(arrayLen);
 	}
 
+	mkBvArray32(name) {
+		let arraySort = this.mkArraySort(this.mkBvSort(32), this.mkBvSort(32));
+		let arrayInstance = this.mkVar(name, arraySort);
+		let arrayLen = this.mkBvVar(name + "_Array_Length", 32);
+		return arrayInstance.setLength(arrayLen);
+	}
+
+	mkBvArray64(name) {
+		let arraySort = this.mkArraySort(this.mkBvSort(64), this.mkBvSort(64));
+		let arrayInstance = this.mkVar(name, arraySort);
+		let arrayLen = this.mkBvVar(name + "_Array_Length", 64);
+		return arrayInstance.setLength(arrayLen);
+	}
+
 	mkObject(name, baseSort) {
 		let objectSort = this.mkArraySort(this.mkStringSort(), baseSort);
 		let objectInstance = this.mkVar(name, objectSort);
