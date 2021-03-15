@@ -421,16 +421,48 @@ class Context {
 		return this._build(Z3.Z3_mk_lt, left, right);
 	}
 
+	mkBvLtS(arg1, arg2) {
+		return this._build(Z3.Z3_mk_bvslt, arg1, arg2);
+	}
+
+	mkBvLtU(arg1, arg2) {
+		return this._build(Z3.Z3_mk_bvult, arg1, arg2);
+	}
+
 	mkLe(left, right) {
 		return this._build(Z3.Z3_mk_le, left, right);
+	}
+
+	mkBvLeS(arg1, arg2) {
+		return this._build(Z3.Z3_mk_bvsle, arg1, arg2);
+	}
+
+	mkBvLeU(arg1, arg2) {
+		return this._build(Z3.Z3_mk_bvule, arg1, arg2);
 	}
 
 	mkGt(left, right) {
 		return this._build(Z3.Z3_mk_gt, left, right);
 	}
 
+	mkBvGtS(arg1, arg2) {
+		return this._build(Z3.Z3_mk_bvsgt, arg1, arg2);
+	}
+
+	mkBvGtU(arg1, arg2) {
+		return this._build(Z3.Z3_mk_bvugt, arg1, arg2);
+	}
+
 	mkGe(left, right) {
 		return this._build(Z3.Z3_mk_ge, left, right);
+	}
+
+	mkBvGeS(arg1, arg2) {
+		return this._build(Z3.Z3_mk_bvsge, arg1, arg2);
+	}
+
+	mkBvGeU(arg1, arg2) {
+		return this._build(Z3.Z3_mk_bvuge, arg1, arg2);
 	}
 
 	mkRealToInt(real) {
