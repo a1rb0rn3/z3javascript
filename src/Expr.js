@@ -132,15 +132,20 @@ class Expr {
 			return this.getBoolValue();
 		} else if (sort === "String") {
 			return this.escapeString(Z3.Z3_get_string(this.context.ctx, this.ast));
-		} else if (this.getLength()) { //Array
+		} else if (sort === "Array") { //Array
 
+			let lenSort = this.getLength()._sortName();
 			//TODO: Propogating array lengths like this is horrible, find a better way
 			let len = mdl.eval(this.getLength()).asConstant(mdl);
 
 			let built = [];
 
 			for (let i = 0; i < len; i++) {
-				built.push(mdl.eval(this.context.mkSelect(this, this.context.mkIntVal(i))).asConstant(mdl));
+				if (lenSort === "bv") {
+					built.push(mdl.eval(this.context.mkSelect(this, this.context.mkBvVal32(i))).asConstant(mdl));
+				} else {
+					built.push(mdl.eval(this.context.mkSelect(this, this.context.mkIntVal(i))).asConstant(mdl));
+				}
 			}
 
 			return built;
