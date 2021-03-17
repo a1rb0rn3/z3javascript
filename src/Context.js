@@ -140,16 +140,24 @@ class Context {
 		return this.mkInt(val, this.mkIntSort());
 	}
 
-	mkBvVal32(val) {
+	mkBvVal32S(val) {
 		return this.mkInt(val, this.mkBvSort(32));
 	}
 
-	mkBvVal64(val) {
+	mkBvVal64S(val) {
 		return this.mkInt64(val, this.mkBvSort(64));
 	}
 
 	mkUnsignedIntVal(val) {
 		return this.mkUnsignedInt(val, this.mkIntSort());
+	}
+	
+	mkBvVal32U(val) {
+		return this.mkUnsignedInt(val, this.mkBvSort(32));
+	}
+
+	mkBvVal64U(val) {
+		return this.mkUnsignedInt64(val, this.mkBvSort(64));
 	}
 
 	mkSeqLength(val) {
