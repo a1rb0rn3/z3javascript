@@ -70,6 +70,13 @@ class Expr {
 		return Number(num_dec_string);
 	}
 
+	getBvSize() {
+		const sort = this._sortName(); 
+		if (sort === "bv") {
+			return Z3.Z3_get_bv_sort_size(this.context.ctx, this.context.mkGetSort(this));
+		}
+	}
+
 	escapeString(str) {
 		function replacer(match, p1) {
 			var chars = str[p1 + 2] + str[p1 + 3];
